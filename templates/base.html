@@ -28,8 +28,7 @@
     <link rel="apple-touch-icon" href="/static/images/paramount_h_logo.jpeg">
     <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Paramount Holidayz">
 
     <!-- Bootstrap CSS -->
@@ -45,6 +44,19 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
+
+    <style>
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-success:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+        }
+    </style>
 
     <!-- Critical CSS for above-the-fold content -->
     <style>
@@ -74,7 +86,7 @@
 
     <!-- Performance & Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
@@ -246,7 +258,7 @@
                             <li><i class="fas fa-globe me-2"></i><a href="https://www.paramountholidayz.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">www.paramountholidayz.com</a></li>
                             <li><i class="fas fa-envelope me-2"></i>india@paramountholidayz.com</li>
                             <li><i class="fas fa-envelope me-2"></i>bangkok@paramountholidayz.com</li>
-                            <li><i class="fas fa-envelope me-2"></i>sales@paramountholidayz@gmail.com</li>
+                             <li><i class="fas fa-envelope me-2"></i>sales.paramountholidayz@gmail.com</li>
                             <li><i class="fas fa-map-marker-alt me-2"></i>Mumbai, Maharashtra, India</li>
                             <li><i class="fas fa-map-marker-alt me-2"></i>Jalandhar, Punjab 144009, India</li>
                             <li><i class="fas fa-clock me-2"></i>Mon-Sat: 9AM-8PM</li>
@@ -467,70 +479,6 @@
                         counter.animationTimer = requestAnimationFrame(animate);
                     }, startDelay);
 
-                    // Clear any existing animation
-                    if (counter.animationTimer) {
-                        clearInterval(counter.animationTimer);
-                    }
-
-                    // Add visual feedback - highlight during animation
-                    counter.style.transform = 'scale(1.05)';
-                    counter.style.textShadow = '0 0 10px rgba(102, 126, 234, 0.5)';
-                    counter.style.fontWeight = '900'; // Make numbers bolder during animation
-
-                    // Stagger the start of each counter animation
-                    const startDelay = index * 300; // 300ms delay between each counter for better visibility
-
-                    setTimeout(() => {
-                        // Simple and reliable animation using requestAnimationFrame
-                        let current = 0;
-                        const duration = 2000; // 2 seconds for smooth animation
-                        const startTime = performance.now();
-
-                        function animate(currentTime) {
-                            const elapsed = currentTime - startTime;
-                            const progress = Math.min(elapsed / duration, 1);
-
-                            // Easing function for smooth animation
-                            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                            current = Math.floor(target * easeOutQuart);
-
-                             // Format with commas for large numbers, add % for satisfaction rate, add + for happy travellers
-                             const isPercentage = counter.nextElementSibling && counter.nextElementSibling.textContent.toLowerCase().includes('satisfaction');
-                             const isTravellers = counter.nextElementSibling && counter.nextElementSibling.textContent.toLowerCase().includes('travellers');
-                             counter.innerText = isPercentage ? current + '%' : isTravellers ? current + '+' : current.toLocaleString();
-
-                            if (progress < 1) {
-                                counter.animationTimer = requestAnimationFrame(animate);
-                            } else {
-                                 // Ensure final value is exact
-                                 const isTravellersFinal = counter.nextElementSibling && counter.nextElementSibling.textContent.toLowerCase().includes('travellers');
-                                 counter.innerText = isPercentage ? target + '%' : isTravellersFinal ? target + '+' : target.toLocaleString();
-                                delete counter.animationTimer;
-
-                                // Reset visual feedback
-                                counter.style.transform = 'scale(1)';
-                                counter.style.textShadow = '';
-                                counter.style.fontWeight = '700'; // Reset to normal weight
-
-                                 completedAnimations++;
-
-                                 // Check if all counters are done
-                                 if (completedAnimations === totalCounters) {
-                                     // Reset test button
-                                    const testBtn = document.querySelector('button[onclick*="animateCounters"]');
-                                    if (testBtn) {
-                                        testBtn.innerText = 'Animation Complete!';
-                                        testBtn.classList.remove('btn-primary');
-                                        testBtn.classList.add('btn-success');
-                                        testBtn.style.backgroundColor = '#28a745';
-                                    }
-                                }
-                            }
-                        }
-
-                        counter.animationTimer = requestAnimationFrame(animate);
-                    }, startDelay);
-
                 } else {
                     completedAnimations++; // Count as completed even if invalid
                 }
@@ -643,19 +591,7 @@
             });
         });
 
-        // Add loading animation to buttons
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (!this.classList.contains('loading')) {
-                    this.classList.add('loading');
-                    this.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Loading...';
-                    setTimeout(() => {
-                        this.classList.remove('loading');
-                        this.innerHTML = this.getAttribute('data-original-text') || this.innerHTML;
-                    }, 2000);
-                }
-            });
-        });
+
 
         // Enhanced Back to Top Button with Floating Action Menu
         document.addEventListener('DOMContentLoaded', function() {
@@ -1090,7 +1026,7 @@
 
         // Enhanced Form Validation and Feedback
         document.addEventListener('DOMContentLoaded', function() {
-            const forms = document.querySelectorAll('form:not(#newsletterForm)');
+            const forms = document.querySelectorAll('form:not(#newsletterForm):not(.package-form)');
 
             forms.forEach(form => {
                 const inputs = form.querySelectorAll('input, textarea, select');

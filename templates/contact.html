@@ -4,9 +4,28 @@
 {% if message %}
 <div class="alert alert-success">{{ message }}</div>
 {% endif %}
-<form method="post">
+<form method="post" class="contact-form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="row g-3">
+        <div class="col-12">
+            <label for="{{ form.name.id_for_label }}" class="form-label fw-bold">Name *</label>
+            {{ form.name }}
+        </div>
+        <div class="col-12">
+            <label for="{{ form.email.id_for_label }}" class="form-label fw-bold">Email *</label>
+            {{ form.email }}
+        </div>
+        <div class="col-12">
+            <label for="{{ form.phone.id_for_label }}" class="form-label fw-bold">Contact Number *</label>
+            {{ form.phone }}
+        </div>
+        <div class="col-12">
+            <label for="{{ form.message.id_for_label }}" class="form-label fw-bold">Message *</label>
+            {{ form.message }}
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary btn-lg px-5">Send Inquiry</button>
+    </div>
 </form>
 {% endblock %}

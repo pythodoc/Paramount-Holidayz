@@ -39,6 +39,16 @@ SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
 CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
 SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Use SMTP for sending emails
+EMAIL_HOST = 'mail.paramountholidayz.com'  # Your SMTP server
+EMAIL_PORT = 465  # SSL port
+EMAIL_USE_SSL = True  # Use SSL for port 465
+EMAIL_USE_TLS = False  # Don't use TLS with SSL
+EMAIL_HOST_USER = 'india@paramountholidayz.com'  # Your email
+EMAIL_HOST_PASSWORD = 'India@2025'  # Your email password
+DEFAULT_FROM_EMAIL = 'india@paramountholidayz.com'  # Your email
+
 
 # Application definition
 
