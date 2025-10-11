@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand Paradise - Paramount Holidayz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Roboto:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .brochure {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Advanced Background Patterns */
+        .brochure::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(240, 147, 251, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Hero Section with Advanced Design */
+        .hero-section {
+            position: relative;
+            height: 120mm;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.95) 0%, rgba(42, 82, 152, 0.95) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="8" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-pattern)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 160mm;
+            padding: 0 20mm;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 8pt;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffffff, #e8f4f8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-tagline {
+            font-size: 11pt;
+            opacity: 0.9;
+            margin-bottom: 15pt;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 800;
+            margin-bottom: 12pt;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 20pt;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 8pt 16pt;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12pt;
+            display: inline-block;
+            margin-top: 10pt;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Packages Section */
+        .packages-section {
+            padding: 25mm 20mm;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 25pt;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8pt;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5pt;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60pt;
+            height: 2pt;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 1pt;
+        }
+
+        .section-subtitle {
+            font-size: 12pt;
+            color: #6c757d;
+            font-weight: 400;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+            margin-top: 20pt;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15pt;
+            overflow: hidden;
+            box-shadow: 0 10pt 30pt rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            border: 1pt solid #e9ecef;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8pt);
+            box-shadow: 0 20pt 40pt rgba(0,0,0,0.15);
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4pt;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .package-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20pt 15pt;
+            text-align: center;
+            position: relative;
+        }
+
+        .package-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .package-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18pt;
+            font-weight: 700;
+            margin-bottom: 8pt;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-price {
+            font-size: 28pt;
+            font-weight: 900;
+            margin: 10pt 0;
+            text-shadow: 0 2pt 4pt rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-duration {
+            font-size: 11pt;
+            opacity: 0.9;
+            margin-bottom: 8pt;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-stars {
+            font-size: 14pt;
+            margin-bottom: 10pt;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-body {
+            padding: 20pt 15pt;
+        }
+
+        .inclusions-list {
+            list-style: none;
+            margin-bottom: 15pt;
+        }
+
+        .inclusions-list li {
+            padding: 6pt 0;
+            border-bottom: 1pt solid #f1f3f4;
+            display: flex;
+            align-items: center;
+            font-size: 10pt;
+        }
+
+        .inclusions-list li:last-child {
+            border-bottom: none;
+        }
+
+        .inclusions-list li i {
+            color: #28a745;
+            margin-right: 8pt;
+            width: 12pt;
+            font-size: 10pt;
+        }
+
+        .package-highlight {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2pt solid #ffc107;
+            border-radius: 8pt;
+            padding: 12pt;
+            margin-top: 15pt;
+            text-align: center;
+        }
+
+        .package-highlight h4 {
+            color: #856404;
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 5pt;
+        }
+
+        .package-highlight p {
+            color: #856404;
+            font-size: 9pt;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Itinerary Section */
+        .itinerary-section {
+            padding: 25mm 20mm;
+            background: white;
+        }
+
+        .itinerary-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 700;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20pt;
+        }
+
+        .itinerary-grid {
+            display: grid;
+            gap: 15pt;
+        }
+
+        .itinerary-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12pt;
+            padding: 15pt;
+            border-left: 4pt solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .itinerary-item:hover {
+            transform: translateX(8pt);
+            box-shadow: 0 8pt 25pt rgba(0,0,0,0.1);
+        }
+
+        .itinerary-item::before {
+            content: '';
+            position: absolute;
+            top: -2pt;
+            left: -2pt;
+            width: 8pt;
+            height: 8pt;
+            background: #667eea;
+            border-radius: 50%;
+            border: 2pt solid white;
+        }
+
+        .itinerary-day {
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .itinerary-day i {
+            margin-right: 8pt;
+            font-size: 12pt;
+        }
+
+        .itinerary-description {
+            color: #6c757d;
+            font-size: 10pt;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 25mm 20mm;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 700;
+            margin-bottom: 20pt;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200pt, 1fr));
+            gap: 20pt;
+            margin-bottom: 25pt;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10pt);
+            border-radius: 12pt;
+            padding: 20pt;
+            border: 1pt solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5pt);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 24pt;
+            color: #667eea;
+            margin-bottom: 12pt;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            font-size: 12pt;
+            margin-bottom: 8pt;
+        }
+
+        .contact-value {
+            opacity: 0.9;
+            font-size: 11pt;
+            margin: 0;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 12pt 24pt;
+            border-radius: 25pt;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14pt;
+            display: inline-block;
+            margin-top: 15pt;
+            box-shadow: 0 6pt 20pt rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3pt);
+            box-shadow: 0 8pt 25pt rgba(40, 167, 69, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #cccccc;
+            padding: 15pt 20mm;
+            text-align: center;
+            font-size: 9pt;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .brochure {
+                box-shadow: none;
+                margin: 0;
+            }
+            .hero-cta {
+                display: none;
+            }
+            .contact-cta {
+                display: none;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .brochure {
+                width: 100%;
+                margin: 0;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 15pt;
+            }
+
+            .hero-title {
+                font-size: 28pt;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="brand-logo">PARAMOUNT HOLIDAYZ</div>
+                <div class="brand-tagline">Your Trusted Travel Partner</div>
+                <h1 class="hero-title">Thailand Paradise</h1>
+                <p class="hero-subtitle">Experience the Land of Smiles with Unforgettable Adventures</p>
+                <a href="tel:+919226155000" class="hero-cta">
+                    <i class="fas fa-phone me-2"></i>Book Your Adventure
+                </a>
+            </div>
+        </div>
+
+        <!-- Packages Section -->
+        <div class="packages-section">
+            <div class="section-header">
+                <h2 class="section-title">Exclusive Packages</h2>
+                <p class="section-subtitle">Choose your perfect Thailand experience</p>
+            </div>
+
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">Premium 3-Star Package</h3>
+                        <div class="package-price">₹14,999</div>
+                        <div class="package-duration">4 Nights • 5 Days</div>
+                        <div class="package-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="package-body">
+                        <ul class="inclusions-list">
+                            <li><i class="fas fa-hotel"></i> 4 Nights in 3-Star Hotel</li>
+                            <li><i class="fas fa-utensils"></i> Daily Breakfast</li>
+                            <li><i class="fas fa-ship"></i> Coral Island with Lunch</li>
+                            <li><i class="fas fa-theater-masks"></i> Alcazar Show with Transfer</li>
+                            <li><i class="fas fa-paw"></i> Tiger Park Entrance</li>
+                            <li><i class="fas fa-city"></i> Pattaya City Tour</li>
+                            <li><i class="fas fa-gem"></i> Gems Gallery Visit</li>
+                            <li><i class="fas fa-car"></i> Private Airport Transfers</li>
+                        </ul>
+
+                        <div class="package-highlight">
+                            <h4><i class="fas fa-crown"></i> Premium Experience</h4>
+                            <p>Enjoy luxury transfers and exclusive sightseeing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">Luxury 4-Star Package</h3>
+                        <div class="package-price">₹17,999</div>
+                        <div class="package-duration">4 Nights • 5 Days</div>
+                        <div class="package-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="package-body">
+                        <ul class="inclusions-list">
+                            <li><i class="fas fa-hotel"></i> 4 Nights in 4-Star Hotel</li>
+                            <li><i class="fas fa-utensils"></i> Daily Breakfast</li>
+                            <li><i class="fas fa-ship"></i> Coral Island with Lunch</li>
+                            <li><i class="fas fa-theater-masks"></i> Alcazar Show with Transfer</li>
+                            <li><i class="fas fa-paw"></i> Tiger Park Entrance</li>
+                            <li><i class="fas fa-city"></i> Pattaya City Tour</li>
+                            <li><i class="fas fa-gem"></i> Gems Gallery Visit</li>
+                            <li><i class="fas fa-car"></i> Private Airport Transfers</li>
+                        </ul>
+
+                        <div class="package-highlight">
+                            <h4><i class="fas fa-gem"></i> Luxury Experience</h4>
+                            <p>Superior comfort with premium 4-star accommodation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Itinerary Section -->
+        <div class="itinerary-section">
+            <h2 class="itinerary-title">Your Thailand Adventure</h2>
+
+            <div class="itinerary-grid">
+                <div class="itinerary-item">
+                    <h3 class="itinerary-day">
+                        <i class="fas fa-plane-arrival"></i> Day 1: Arrival in Bangkok
+                    </h3>
+                    <p class="itinerary-description">
+                        Welcome to Thailand! Transfer to your Pattaya hotel for check-in and relaxation.
+                        Enjoy the scenic drive and settle into your accommodation.
+                    </p>
+                </div>
+
+                <div class="itinerary-item">
+                    <h3 class="itinerary-day">
+                        <i class="fas fa-ship"></i> Day 2: Coral Island Adventure
+                    </h3>
+                    <p class="itinerary-description">
+                        Enjoy a full day at Coral Island with snorkeling, swimming, and a delicious lunch.
+                        Experience the crystal-clear waters and marine life.
+                    </p>
+                </div>
+
+                <div class="itinerary-item">
+                    <h3 class="itinerary-day">
+                        <i class="fas fa-paw"></i> Day 3: Tiger Kingdom & City Tour
+                    </h3>
+                    <p class="itinerary-description">
+                        Visit Tiger Kingdom for an unforgettable wildlife experience, followed by Pattaya city sightseeing.
+                        Explore the vibrant city and its attractions.
+                    </p>
+                </div>
+
+                <div class="itinerary-item">
+                    <h3 class="itinerary-day">
+                        <i class="fas fa-theater-masks"></i> Day 4: Alcazar Show & Gems Gallery
+                    </h3>
+                    <p class="itinerary-description">
+                        Experience the spectacular Alcazar Cabaret Show and explore the fascinating Gems Gallery.
+                        Enjoy world-class entertainment and shopping.
+                    </p>
+                </div>
+
+                <div class="itinerary-item">
+                    <h3 class="itinerary-day">
+                        <i class="fas fa-plane-departure"></i> Day 5: Departure
+                    </h3>
+                    <p class="itinerary-description">
+                        Transfer to the airport for your journey home with wonderful memories.
+                        Safe travels and see you again soon!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2 class="contact-title">Ready for Your Thailand Adventure?</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h4 class="contact-label">Call Us</h4>
+                    <p class="contact-value">+91 9226155000</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h4 class="contact-label">Email Us</h4>
+                    <p class="contact-value">sales.paramountholidayz@gmail.com</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <h4 class="contact-label">Visit Us</h4>
+                    <p class="contact-value">Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <a href="tel:+919226155000" class="contact-cta">
+                <i class="fas fa-phone me-2"></i> Book Your Package Now
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Paramount Holidayz. All rights reserved. | Licensed Travel Agent | Registration No: MH/2024/001</p>
+        </div>
+    </div>
+</body>
+</html>

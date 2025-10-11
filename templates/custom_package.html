@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Custom Travel Package</h1>
+    <p class="lead text-center mb-5">Design your perfect holiday with our personalized travel planning service. Tell us your preferences, and we'll create a customized itinerary just for you.</p>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>What We Offer</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Personalized itineraries based on your interests</li>
+                <li class="list-group-item">Budget-friendly options</li>
+                <li class="list-group-item">Expert recommendations for destinations</li>
+                <li class="list-group-item">Accommodation and transportation arrangements</li>
+                <li class="list-group-item">24/7 support during your trip</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3>Get Started</h3>
+            <p>Contact us with your travel details, and we'll provide a customized package quote.</p>
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Contact Us for Custom Package</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block access to admin
+Disallow: /admin/
+
+# Block access to static files (optional)
+# Disallow: /static/
+
+# Sitemap
+Sitemap: https://paramountholidayz.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

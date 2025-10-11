@@ -1,0 +1,1053 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero-section p-5 mb-5" style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%); color: #ffffff !important;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-4 mb-4">Premium Travel Experiences</h1>
+                <p class="lead mb-4">Transforming your travel dreams into reality with personalized journeys across Thailand, Goa, and beyond. From intimate solo adventures to memorable family vacations.</p>
+                <p class="mb-4">With over a decade of expertise, we deliver comprehensive travel solutions including custom itineraries, luxury accommodations, premium transportation, and dedicated concierge services.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="{% url 'services' %}" class="btn btn-success btn-lg">Explore Services</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Get in Touch</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" role="region" aria-label="Hero destination carousel" aria-live="polite">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/static/images/Shri_lanka.jpeg" class="d-block w-100" alt="Sri Lanka - Ancient temples and pristine beaches" loading="eager">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Sri Lanka</h5>
+                                <p>Discover ancient temples and pristine beaches</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/Vietnam.jpeg" class="d-block w-100" alt="Vietnam - Vibrant culture and stunning landscapes" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Vietnam</h5>
+                                <p>Experience vibrant culture and stunning landscapes</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/Bangkok.jpeg" class="d-block w-100" alt="Bangkok - City of Angels with modern wonders" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Bangkok</h5>
+                                <p>City of Angels with modern wonders</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/Australia.jpg" class="d-block w-100" alt="Australia - Adventure down under awaits" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Australia</h5>
+                                <p>Adventure down under awaits</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/Kerela.jpeg" class="d-block w-100" alt="Kerala - God's Own Country with backwaters" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Kerala</h5>
+                                <p>God's Own Country with backwaters</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/phuket.jpeg" class="d-block w-100" alt="Phuket - Island paradise with crystal waters" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Phuket</h5>
+                                <p>Island paradise with crystal waters</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/goa_1.jpeg" class="d-block w-100" alt="Goa - Beautiful beaches and coastal paradise" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Goa</h5>
+                                <p>Beautiful beaches and coastal paradise</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/goa_2.jpg" class="d-block w-100" alt="Goa - Vibrant culture and stunning sunsets" loading="lazy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Goa</h5>
+                                <p>Vibrant culture and stunning sunsets</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous destination">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next destination">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="carousel-indicators" role="tablist">
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    </div>
+                  </div>
+              </div>
+         </div>
+     </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="stats-section py-5 mb-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-item animate-delay-1">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-users fa-3x text-primary"></i>
+                    </div>
+                     <h2 class="counter text-primary fw-bold" data-target="5000">5000+</h2>
+                     <p class="text-muted fw-semibold">Happy Travellers</p>
+                    <div class="stat-bar"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-item animate-delay-2">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-globe-americas fa-3x text-success"></i>
+                    </div>
+                    <h2 class="counter text-success fw-bold" data-target="25">25</h2>
+                    <p class="text-muted fw-semibold">Countries Served</p>
+                    <div class="stat-bar"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-item animate-delay-3">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-calendar-alt fa-3x text-warning"></i>
+                    </div>
+                    <h2 class="counter text-warning fw-bold" data-target="10">10</h2>
+                    <p class="text-muted fw-semibold">Years Experience</p>
+                    <div class="stat-bar"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-item animate-delay-4">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-smile fa-3x text-info"></i>
+                    </div>
+                    <h2 class="counter text-info fw-bold" data-target="98">98%</h2>
+                    <p class="text-muted fw-semibold">Satisfaction Rate</p>
+                    <div class="stat-bar"></div>
+                </div>
+            </div>
+          </div>
+      </div>
+ </div>
+
+    <!-- Feature Cards -->
+    <div class="row text-center mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #667eea;"></i>
+                    </div>
+                    <h5 class="card-title">Customized Holidays</h5>
+                    <p class="card-text">Tailored holiday packages designed to match your preferences, budget, and schedule.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-users" style="font-size: 3rem; color: #764ba2;"></i>
+                    </div>
+                    <h5 class="card-title">Expert Guidance</h5>
+                    <p class="card-text">Our experienced team provides professional advice and 24/7 support throughout your journey.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-concierge-bell" style="font-size: 3rem; color: #f093fb;"></i>
+                    </div>
+                    <h5 class="card-title">Comprehensive Services</h5>
+                    <p class="card-text">From flights and hotels to visas and insurance, we handle every aspect of your travel needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mb-5">
+        <h2 class="mb-3">Make a Memorable Holiday</h2>
+        <p class="lead">Let us take care of the details so you can focus on creating unforgettable memories with your loved ones.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'custom_package' %}">Plan Your Custom Package</a>
+    </div>
+
+    <!-- Thailand Package Offers -->
+    <div class="thailand-packages-section mb-5">
+        <h2 class="text-center mb-4">Thailand Holiday Packages</h2>
+        <p class="text-center lead mb-5">Choose from our fully customized and ready-to-book Thailand holiday packages</p>
+
+        <div class="row g-4">
+            <!-- Package 1: 4N-5D 3-Star -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm package-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h5 class="mb-1">Thailand Package 1</h5>
+                        <small>4 Nights - 5 Days</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-price text-center mb-3">
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount">14,999</span>
+                            </div>
+                            <small class="text-muted d-block">per person</small>
+                        </div>
+                        <div class="package-details">
+                            <p class="fw-bold text-primary mb-2">🏨 3-Star Hotel</p>
+                            <ul class="list-unstyled small mb-3">
+                                <li>✅ 4 Nights accommodation with daily breakfast</li>
+                                <li>✅ Coral Island with lunch (pickup & drop)</li>
+                                <li>✅ Alcazar Show with transfer</li>
+                                <li>✅ Tiger Park entrance ticket with transfer</li>
+                                <li>✅ Pattaya City Tour with transfer</li>
+                                <li>✅ Gems Gallery with transfer</li>
+                                <li>✅ Private airport transfers</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'contact' %}" class="btn btn-success btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 2: 4N-5D 3-Star with Yacht Party -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm package-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h5 class="mb-1">Thailand Package 2</h5>
+                        <small>4 Nights - 5 Days</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-price text-center mb-3">
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount">18,999</span>
+                            </div>
+                            <small class="text-muted d-block">per person</small>
+                        </div>
+                        <div class="package-details">
+                            <p class="fw-bold text-primary mb-2">🏨 3-Star Hotel + Yacht Party</p>
+                            <ul class="list-unstyled small mb-3">
+                                <li>✅ 4 Nights accommodation with daily breakfast</li>
+                                <li>✅ Coral Island with lunch (pickup & drop)</li>
+                                <li>✅ Sunset Yacht Party (Whiskey, snacks, entertainment)</li>
+                                <li>✅ Tiger Park entrance ticket with transfer</li>
+                                <li>✅ Pool Party experience</li>
+                                <li>✅ Private airport transfers</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'contact' %}" class="btn btn-success btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 3: 4N-5D 4-Star with Yacht Party -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm package-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h5 class="mb-1">Thailand Package 3</h5>
+                        <small>4 Nights - 5 Days</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-price text-center mb-3">
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount">21,999</span>
+                            </div>
+                            <small class="text-muted d-block">per person</small>
+                        </div>
+                        <div class="package-details">
+                            <p class="fw-bold text-primary mb-2">🏨 4-Star Hotel + Yacht Party</p>
+                            <ul class="list-unstyled small mb-3">
+                                <li>✅ 4 Nights accommodation with daily breakfast</li>
+                                <li>✅ Coral Island with lunch (pickup & drop)</li>
+                                <li>✅ Sunset Yacht Party (Whiskey, snacks, entertainment)</li>
+                                <li>✅ Tiger Park entrance ticket with transfer</li>
+                                <li>✅ Pool Party experience</li>
+                                <li>✅ Private airport transfers</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'contact' %}" class="btn btn-success btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 4: 3N-4D 3-Star -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm package-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h5 class="mb-1">Thailand Package 4</h5>
+                        <small>3 Nights - 4 Days</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-price text-center mb-3">
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount">12,999</span>
+                            </div>
+                            <small class="text-muted d-block">per person</small>
+                        </div>
+                        <div class="package-details">
+                            <p class="fw-bold text-primary mb-2">🏨 3-Star Hotel</p>
+                            <ul class="list-unstyled small mb-3">
+                                <li>✅ 3 Nights accommodation with daily breakfast</li>
+                                <li>✅ Coral Island with lunch (pickup & drop)</li>
+                                <li>✅ Tiger Park entrance ticket with transfer</li>
+                                <li>✅ Thai Massage session</li>
+                                <li>✅ Pool Party experience</li>
+                                <li>✅ Private airport transfers</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'contact' %}" class="btn btn-success btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 5: 5N-6D Pattaya + Bangkok -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm package-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h5 class="mb-1">Thailand Package 5</h5>
+                        <small>5 Nights - 6 Days</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-price text-center mb-3">
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount">19,999</span>
+                            </div>
+                            <small class="text-muted d-block">per person</small>
+                        </div>
+                        <div class="package-details">
+                            <p class="fw-bold text-primary mb-2">🏨 3-Star Hotels (Pattaya + Bangkok)</p>
+                            <ul class="list-unstyled small mb-3">
+                                <li>✅ 3 Nights Pattaya + 2 Nights Bangkok</li>
+                                <li>✅ Daily breakfast at both locations</li>
+                                <li>✅ Coral Island with lunch (pickup & drop)</li>
+                                <li>✅ Tiger Park entrance ticket (private)</li>
+                                <li>✅ Pattaya City Tour (private)</li>
+                                <li>✅ Bangkok Floating Market (SIC)</li>
+                                <li>✅ Bangkok City Tour (SIC)</li>
+                                <li>✅ Private airport transfers</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'contact' %}" class="btn btn-success btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 6: 4N-5D 4-Star -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm package-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h5 class="mb-1">Thailand Package 6</h5>
+                        <small>4 Nights - 5 Days</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-price text-center mb-3">
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount">17,999</span>
+                            </div>
+                            <small class="text-muted d-block">per person</small>
+                        </div>
+                        <div class="package-details">
+                            <p class="fw-bold text-primary mb-2">🏨 4-Star Hotel</p>
+                            <ul class="list-unstyled small mb-3">
+                                <li>✅ 4 Nights accommodation with daily breakfast</li>
+                                <li>✅ Coral Island with lunch (pickup & drop)</li>
+                                <li>✅ Alcazar Show with transfer</li>
+                                <li>✅ Tiger Park entrance ticket with transfer</li>
+                                <li>✅ Pattaya City Tour with transfer</li>
+                                <li>✅ Gems Gallery with transfer</li>
+                                <li>✅ Private airport transfers</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'contact' %}" class="btn btn-success btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <p class="text-muted small">* All prices are per person for minimum 2 persons (twin sharing) • Private transfers included • SIC = Seat in Coach</p>
+            <a href="{% url 'custom_package' %}" class="btn btn-primary btn-lg">Need Custom Package?</a>
+        </div>
+    </div>
+
+    <!-- Phuket Package Offer -->
+    <div class="phuket-offer bg-info p-4 rounded shadow-sm mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-2">
+                <h3 class="text-success mb-3">Discover Phuket Paradise</h3>
+                <p class="lead text-dark">Experience the ultimate tropical getaway in Phuket with our comprehensive package!</p>
+                <div class="bg-white p-3 rounded mb-3">
+                    <h5 class="text-dark mb-2">🌟 Famous Locations Included:</h5>
+                    <ul class="list-unstyled text-dark mb-0">
+                        <li>🏖️ Patong Beach - Vibrant atmosphere & water sports</li>
+                        <li>🏝️ Phi Phi Islands - Serene beauty & Maya Bay</li>
+                        <li>🗿 James Bond Island - Iconic limestone karst</li>
+                        <li>🏛️ Big Buddha - Stunning panoramic views</li>
+                        <li>🏛️ Old Phuket Town - Charming historical district</li>
+                        <li>⛩️ Wat Chalong Temple - Sacred Buddhist site</li>
+                        <li>🎭 Phuket FantaSea - Cultural theme park</li>
+                    </ul>
+                </div>
+                <ul class="list-unstyled text-dark">
+                    <li>✅ 5-star beachfront hotel accommodation</li>
+                    <li>✅ Daily breakfast & selected meals</li>
+                    <li>✅ Airport transfers (Private basis)</li>
+                    <li>✅ Guided island hopping tours</li>
+                    <li>✅ Cultural shows & entertainment</li>
+                </ul>
+                <p class="text-dark">Starting from <strong class="text-success">₹22,999 per person</strong></p>
+                <p class="small text-dark">*Minimum 2 persons (twin sharing)</p>
+                <a href="{% url 'contact' %}" class="btn btn-warning btn-lg">Book Phuket Trip</a>
+            </div>
+            <div class="col-md-6 order-md-1 text-center">
+                <img src="/static/images/phuket_1.jpg" alt="Phuket Package" class="img-fluid rounded shadow" style="max-height: 300px;">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Thailand Attractions Gallery -->
+    <div class="attractions-section mb-5">
+        <h2 class="text-center mb-4">Thailand Attractions & Activities</h2>
+        <p class="text-center lead mb-5">Discover the incredible experiences awaiting you in Thailand</p>
+
+        <div class="row g-5">
+            <!-- Wat Yansangwararam Temple -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="watCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/wat_yansangwararam_1.jpeg" class="d-block w-100" alt="Wat Yansangwararam Temple">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/wat_yansangwararam_2.jpeg" class="d-block w-100" alt="Wat Yansangwararam Temple">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/wat_yansangwararam_3.jpeg" class="d-block w-100" alt="Wat Yansangwararam Temple">
+                                    </div>
+                                </div>
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#watCarousel" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#watCarousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#watCarousel" data-bs-slide-to="2"></button>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#watCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#watCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🏛️ Wat Yansangwararam Temple</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Experience the spiritual beauty of this magnificent temple complex featuring traditional Thai architecture and serene meditation spaces.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">✨ Cultural experience • 📸 Photography • 🧘 Meditation spaces</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pattaya Floating Market -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="floatingMarketCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3500">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/pattaya_floating_market_1.jpeg" class="d-block w-100" alt="Pattaya Floating Market">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/pattaya_floating_market_2.jpeg" class="d-block w-100" alt="Pattaya Floating Market">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#floatingMarketCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#floatingMarketCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🏞️ Pattaya Floating Market</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Glide through authentic Thai culture on traditional boats, shop for local crafts, and enjoy fresh street food in this unique floating marketplace.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🚣 Boat rides • 🛍️ Local shopping • 🍜 Street food</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiger Park Pattaya -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="tigerParkCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3200">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/tiger_park_pattaya_1.jpeg" class="d-block w-100" alt="Tiger Park Pattaya">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/tiger_park_pattaya_2.jpeg" class="d-block w-100" alt="Tiger Park Pattaya">
+                                    </div>
+                                </div>
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#tigerParkCarousel" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#tigerParkCarousel" data-bs-slide-to="1"></button>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#tigerParkCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#tigerParkCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🐯 Tiger Park Pattaya</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Get up close with majestic Bengal tigers in a safe, ethical environment. Learn about conservation efforts while creating unforgettable memories.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🐾 Animal interaction • 📚 Conservation education • 📸 Photo opportunities</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sanctuary of Truth -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="sanctuaryCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3800">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/santuary_of_truth_2.jpeg" class="d-block w-100" alt="Sanctuary of Truth">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/santuary_of_truth_3.jpeg" class="d-block w-100" alt="Sanctuary of Truth">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#sanctuaryCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#sanctuaryCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🏛️ Sanctuary of Truth</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Marvel at this all-wooden palace showcasing intricate Thai craftsmanship and Buddhist philosophy, perched beautifully on the coastline.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🎨 Thai craftsmanship • 🏖️ Ocean views • 📖 Cultural insights</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scuba Diving -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="scubaCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3400">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/scuba_diving_1.jpeg" class="d-block w-100" alt="Scuba Diving Pattaya">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/scuba_diving_2.jpeg" class="d-block w-100" alt="Scuba Diving Pattaya">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#scubaCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#scubaCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🤿 Scuba Diving</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Dive into crystal-clear waters to discover vibrant coral reefs, colorful marine life, and sunken treasures in Pattaya's underwater paradise.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🐠 Marine life • 🐚 Coral reefs • 📸 Underwater photography</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elephant Village Tour -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="elephantCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3600">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/elephant-village-tour-pattaya-1.jpg" class="d-block w-100" alt="Elephant Village Tour">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🐘 Elephant Village Tour</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Join an ethical elephant experience where you can interact, feed, and learn about these magnificent creatures in their natural habitat.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🌿 Natural habitat • 🍌 Feeding experience • 📚 Conservation learning</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noong Nooch Garden -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="noongNoochCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3300">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/noong_nooch_garder_1.jpeg" class="d-block w-100" alt="Noong Nooch Garden">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/static/images/noong_nooch_garder_2.jpeg" class="d-block w-100" alt="Noong Nooch Garden">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#noongNoochCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#noongNoochCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🌺 Noong Nooch Garden</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Stroll through meticulously manicured gardens featuring exotic flowers, traditional Thai houses, and cultural performances in this tropical paradise.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🌸 Exotic gardens • 🏠 Thai architecture • 🎭 Cultural shows</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bang Saray -->
+            <div class="col-lg-4 col-md-6 mb-5 px-3">
+                <div class="attraction-card">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-container">
+                            <div id="bangSarayCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/static/images/bang_saray.jpeg" class="d-block w-100" alt="Bang Saray">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attraction-overlay">
+                                <div class="attraction-info">
+                                    <h5 class="card-title mb-1">🏖️ Bang Saray</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Escape to this hidden gem of a beach featuring soft white sand, clear turquoise waters, and a peaceful atmosphere perfect for relaxation.</p>
+                            <div class="attraction-highlights">
+                                <small class="text-muted">🏖️ White sand beach • 🌊 Crystal waters • 🧘 Tranquil atmosphere</small>
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Tiffany Show -->
+             <div class="col-lg-4 col-md-6 mb-5 px-3">
+                 <div class="attraction-card">
+                     <div class="card h-100 border-0 shadow-sm">
+                         <div class="card-img-container">
+                             <div id="tiffanyShowCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3700">
+                                 <div class="carousel-inner">
+                                     <div class="carousel-item active">
+                                         <img src="/static/images/tiffany_show_1.jpeg" class="d-block w-100" alt="Tiffany Show">
+                                     </div>
+                                     <div class="carousel-item">
+                                         <img src="/static/images/tiffany_show_2.jpeg" class="d-block w-100" alt="Tiffany Show">
+                                     </div>
+                                     <div class="carousel-item">
+                                         <img src="/static/images/tiffany_show_3.jpeg" class="d-block w-100" alt="Tiffany Show">
+                                     </div>
+                                 </div>
+                                 <div class="carousel-indicators">
+                                     <button type="button" data-bs-target="#tiffanyShowCarousel" data-bs-slide-to="0" class="active"></button>
+                                     <button type="button" data-bs-target="#tiffanyShowCarousel" data-bs-slide-to="1"></button>
+                                     <button type="button" data-bs-target="#tiffanyShowCarousel" data-bs-slide-to="2"></button>
+                                 </div>
+                                 <button class="carousel-control-prev" type="button" data-bs-target="#tiffanyShowCarousel" data-bs-slide="prev">
+                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                     <span class="visually-hidden">Previous</span>
+                                 </button>
+                                 <button class="carousel-control-next" type="button" data-bs-target="#tiffanyShowCarousel" data-bs-slide="next">
+                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                     <span class="visually-hidden">Next</span>
+                                 </button>
+                             </div>
+                             <div class="attraction-overlay">
+                                 <div class="attraction-info">
+                                     <h5 class="card-title mb-1">🎭 Tiffany Show</h5>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="card-body">
+                             <p class="card-text">Experience Thailand's most spectacular cabaret show featuring world-class performers, stunning costumes, and unforgettable entertainment in an elegant theater setting.</p>
+                             <div class="attraction-highlights">
+                                 <small class="text-muted">🎤 World-class performers • 👗 Stunning costumes • 🎪 Spectacular entertainment</small>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <!-- Phuket Cruise Party -->
+    <div class="cruise-offer bg-primary p-4 rounded shadow-sm mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-2">
+                <h3 class="text-white mb-3">Phuket Cruise Party Extravaganza</h3>
+                <p class="lead text-white">Experience the ultimate luxury cruise party in the stunning Andaman Sea!</p>
+                <div class="bg-white p-3 rounded mb-3">
+                    <h5 class="text-dark mb-2">🎊 Cruise Party Highlights:</h5>
+                    <ul class="list-unstyled text-dark mb-0">
+                        <li>🌅 Sunset cruise with panoramic views</li>
+                        <li>🎵 Live DJ and international music</li>
+                        <li>🍾 Open bar with premium beverages</li>
+                        <li>🍽️ Gourmet buffet dinner on board</li>
+                        <li>💃 Professional dance floor and lighting</li>
+                        <li>📸 Photo booth and social media moments</li>
+                        <li>🏊 Swimming stops at pristine beaches</li>
+                        <li>🎭 Cultural performances and entertainment</li>
+                    </ul>
+                </div>
+                <div class="row text-center mb-3">
+                    <div class="col-6">
+                        <img src="/static/images/cruise_party_1.jpg" alt="Cruise Party 1" class="img-fluid rounded shadow mb-2" style="max-height: 120px;">
+                    </div>
+                    <div class="col-6">
+                        <img src="/static/images/cruise_party_2.jpg" alt="Cruise Party 2" class="img-fluid rounded shadow mb-2" style="max-height: 120px;">
+                    </div>
+                </div>
+                <p class="text-white">Starting from <strong class="text-success">₹8,999 per person</strong></p>
+                <p class="small text-white-50">*Includes transfers, dinner, and entertainment</p>
+                <a href="{% url 'contact' %}" class="btn btn-warning btn-lg">Book Cruise Party</a>
+            </div>
+            <div class="col-md-6 order-md-1 text-center">
+                <div id="cruiseCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/static/images/cruise_party_1.jpg" class="d-block w-100 rounded" alt="Phuket Cruise Party">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Sunset Cruise</h5>
+                                <p>Magical evening on the Andaman Sea</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/cruise_party_2.jpg" class="d-block w-100 rounded" alt="Cruise Entertainment">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Live Entertainment</h5>
+                                <p>DJ, dancing, and celebrations</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/cruise_party_3.jpg" class="d-block w-100 rounded" alt="Cruise Party Fun">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Party Atmosphere</h5>
+                                <p>Unforgettable cruise party experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#cruiseCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#cruiseCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Monthly Special Offer -->
+    <div class="monthly-offer bg-warning p-4 rounded shadow-sm mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h3 class="text-dark mb-3">Monthly Special Offers</h3>
+                <p class="lead">Exclusive deals available every last week of the month!</p>
+                <div class="alert alert-info">
+                    <strong>Special Offers:</strong>
+                    <ul class="mb-0 mt-2">
+                        <li>Thailand Package at ₹15,999 (Save ₹2,000)</li>
+                        <li>Kerala Package at ₹10,999 (Save ₹2,000)</li>
+                        <li>Cruise Party at ₹7,999 (Save ₹1,000)</li>
+                        <li>Free airport transfers for all packages</li>
+                        <li>Complimentary travel insurance</li>
+                    </ul>
+                </div>
+                <p class="text-muted">Limited seats available. Book early to secure your spot!</p>
+                <a href="{% url 'contact' %}" class="btn btn-dark btn-lg">Reserve Your Spot</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="/static/images/Shri_lanka.jpeg" alt="Monthly Special" class="img-fluid rounded shadow" style="max-height: 300px;">
+            </div>
+        </div>
+    </div>
+
+     <!-- Testimonials Section -->
+     <div class="testimonials-section py-5 mb-5">
+         <div class="container">
+              <h2 class="text-center mb-5">What Our Travelers Say</h2>
+
+             <!-- Testimonial Carousel -->
+             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                 <div class="carousel-inner">
+                     <div class="carousel-item active">
+                         <div class="testimonial-card text-center">
+                             <div class="testimonial-avatar mb-3">
+                                 <i class="fas fa-user-circle fa-3x text-primary"></i>
+                             </div>
+                             <p class="testimonial-text">"Paramount Holidayz made our Thailand trip absolutely unforgettable! From the moment we contacted them, their service was exceptional. The attention to detail and personalized recommendations made our journey perfect."</p>
+                             <div class="testimonial-author">Priya Sharma</div>
+                             <div class="testimonial-role">Mumbai, India</div>
+                             <div class="testimonial-rating mt-2">
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="carousel-item">
+                         <div class="testimonial-card text-center">
+                             <div class="testimonial-avatar mb-3">
+                                 <i class="fas fa-user-circle fa-3x text-success"></i>
+                             </div>
+                             <p class="testimonial-text">"Amazing experience with Paramount Holidayz! Their Goa package was perfectly planned and executed. The beach resorts, local tours, and customer service exceeded our expectations. Highly recommended!"</p>
+                             <div class="testimonial-author">Rajesh Kumar</div>
+                             <div class="testimonial-role">Delhi, India</div>
+                             <div class="testimonial-rating mt-2">
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="carousel-item">
+                         <div class="testimonial-card text-center">
+                             <div class="testimonial-avatar mb-3">
+                                 <i class="fas fa-user-circle fa-3x text-info"></i>
+                             </div>
+                             <p class="testimonial-text">"Professional, reliable, and truly customer-focused! Paramount Holidayz handled our entire family vacation to Thailand flawlessly. The kids loved the elephant experience and the adults enjoyed the cultural tours."</p>
+                             <div class="testimonial-author">Anita Patel</div>
+                             <div class="testimonial-role">Ahmedabad, India</div>
+                             <div class="testimonial-rating mt-2">
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="carousel-item">
+                         <div class="testimonial-card text-center">
+                             <div class="testimonial-avatar mb-3">
+                                 <i class="fas fa-user-circle fa-3x text-warning"></i>
+                             </div>
+                             <p class="testimonial-text">"Outstanding service from Paramount Holidayz! Their Phuket cruise party was beyond amazing. The attention to detail, beautiful locations, and professional staff made our trip memorable. Will definitely book again!"</p>
+                             <div class="testimonial-author">Vikram Singh</div>
+                             <div class="testimonial-role">Chandigarh, India</div>
+                             <div class="testimonial-rating mt-2">
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                                 <i class="fas fa-star text-warning"></i>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- Carousel Controls -->
+                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                 </button>
+
+                 <!-- Carousel Indicators -->
+                 <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <!-- Enhanced Newsletter Signup -->
+     <div class="newsletter-signup">
+         <div class="container">
+             <div class="row justify-content-center">
+                 <div class="col-lg-10 text-center">
+                     <div class="newsletter-content">
+                          <h3 class="mb-3">Stay Updated with Travel Deals</h3>
+                         <p class="mb-4 lead">Subscribe to our newsletter and be the first to know about exclusive offers, new destinations, and travel tips!</p>
+
+                         <div class="newsletter-features mb-4">
+                             <div class="row">
+                                 <div class="col-md-4 mb-3">
+                                     <div class="feature-item">
+                                         <i class="fas fa-plane text-primary fa-2x mb-2"></i>
+                                         <h6>Exclusive Deals</h6>
+                                         <small>Get access to special offers</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-4 mb-3">
+                                     <div class="feature-item">
+                                         <i class="fas fa-map-marked-alt text-success fa-2x mb-2"></i>
+                                         <h6>New Destinations</h6>
+                                         <small>Discover hidden gems</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-4 mb-3">
+                                     <div class="feature-item">
+                                         <i class="fas fa-lightbulb text-warning fa-2x mb-2"></i>
+                                         <h6>Travel Tips</h6>
+                                         <small>Expert travel advice</small>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <form class="newsletter-form" id="newsletterForm">
+                             <div class="row g-3 justify-content-center align-items-end">
+                                 <div class="col-md-5">
+                                     <div class="input-group-custom">
+                                         <i class="fas fa-envelope input-icon"></i>
+                                         <input type="email" class="form-control form-control-advanced form-control-lg" id="newsletterEmail" placeholder="Enter your email address" required>
+                                         <div class="input-feedback"></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-3">
+                                     <button type="submit" class="btn btn-light btn-lg w-100 btn-advanced" id="newsletterSubmit">
+                                         <span class="btn-text">Subscribe Now</span>
+                                         <i class="fas fa-paper-plane ms-2"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </form>
+
+                          <p class="mt-4 small text-white-50">
+                             <i class="fas fa-shield-alt me-1"></i>
+                             We respect your privacy. Unsubscribe at any time.
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+{% endblock %}
