@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-iv+1l8$m&-!0&f22g(tv#6x6!r+&^vb_ih7yw_&#0rg1v#%2ci
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'paramountholidayz.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'paramountholidayz.com','paramount-holidayz-production.up.railway.app']
 
 # Security Settings
 SECURE_BROWSER_XSS_FILTER = True
