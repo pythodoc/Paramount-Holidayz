@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-iv+1l8$m&-!0&f22g(tv#6x6!r+&^vb_ih7yw_&#0rg1v#%2ci'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://paramountholidayz.com','paramount-holidayz-production.up.railway.app']
 CSRF_TRUSTED_ORIGINS = [
@@ -39,9 +39,9 @@ X_FRAME_OPTIONS = 'DENY'
 SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = False  # Set to True in production with HTTPS
-SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
-CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
+SECURE_SSL_REDIRECT = True  # Set to True in production with HTTPS
+SESSION_COOKIE_SECURE = True  # Set to True in production with HTTPS
+CSRF_COOKIE_SECURE = True  # Set to True in production with HTTPS
 SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 
 # Email Configuration
