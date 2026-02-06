@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,15 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-iv+1l8$m&-!0&f22g(tv#6x6!r+&^vb_ih7yw_&#0rg1v#%2ci'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'paramountholidayz.com',
     'www.paramountholidayz.com',
-    'paramount-holidayz-production.up.railway.app'
+    'paramount-holidayz-production.up.railway.app',
 ]
+ALLOWED_HOSTS += [host for host in os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',') if host]
 CSRF_TRUSTED_ORIGINS = [
     'https://paramount-holidayz-production.up.railway.app',
     'https://paramountholidayz.com',
@@ -46,7 +48,9 @@ X_FRAME_OPTIONS = 'DENY'
 SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = True  # Set to True in production with HTTPS
+SECURE_SSL_REDIRECT = os.getenv('DJANGO_SECURE_SSL_REDIRECT', 'True') == 'True'  # Set to True in production with HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
 SESSION_COOKIE_SECURE = True  # Set to True in production with HTTPS
 CSRF_COOKIE_SECURE = True  # Set to True in production with HTTPS
 SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
