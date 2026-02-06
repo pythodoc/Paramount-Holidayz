@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-iv+1l8$m&-!0&f22g(tv#6x6!r+&^vb_ih7yw_&#0rg1v#%2ci'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
@@ -32,7 +32,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'paramountholidayz.com',
     'www.paramountholidayz.com',
-    'paramount-holidayz-production.up.railway.app'
     'paramount-holidayz-production.up.railway.app',
 ]
 ALLOWED_HOSTS += [host for host in os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',') if host]
