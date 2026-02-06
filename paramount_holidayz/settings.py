@@ -25,10 +25,14 @@ SECRET_KEY = 'django-insecure-iv+1l8$m&-!0&f22g(tv#6x6!r+&^vb_ih7yw_&#0rg1v#%2ci
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'paramountholidayz.com','paramount-holidayz-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 
+                 'paramountholidayz.com',
+                 'www.paramountholidayz.com',
+                 'paramount-holidayz-production.up.railway.app']
 CSRF_TRUSTED_ORIGINS = [
     "https://paramount-holidayz-production.up.railway.app",
     "https://paramountholidayz.com",
+    'https://www.paramountholidayz.com',
 ]
 
 
